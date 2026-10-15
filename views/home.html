@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src = "js/ice-cream.js" defer></script>
     <title>Ice Cream Order</title>
 </head>
 <body>
@@ -11,28 +12,39 @@
         <img src="images/icecreamresized.png" alt="Ice Cream Cone" id="icecream">
     <main>
         <h1>Ice Cream Order Form</h1>
-        <form>
+        <form id = 'ice-cream-form'>
         <fieldset id = "pinfo">
             <legend>Personal Information</legend>
             <label for="name">Name</label>
             <input type="text" name="name" id="name">
+            <span class = "err" id = "err-name">Missing Name</span>
+
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
+            <span class = "err" id = "err-email">Missing Email</span>
         </fieldset>
 
         <fieldset>
             <legend>Order details</legend>
             <p>Choose your flavor: </p>
+            <span class = "err" id = "err-flavor">Missing Flavor</span>
             <select id = "flavor" name = "flavor">
                 <option value = "none">-- Select a flavor --</option>
                 <option value = "vanilla">Vanilla</option>
                 <option value = "chocolate">Chocolate</option>
                 <option value = "taro">Taro</option>
             </select>
+
             <p>Choose your cone: </p>
-            <input type="radio" id="waffle" name="cone" value="waffle">Waffle Cone</input>
-            <input type="radio" id="sugar" name="cone" value="sugar">Sugar Cone</input>
-            <input type="radio" id="cup" name="cone" value="cup">Cup</input>
+            <span class = "err" id = "err-cone">Missing Cone</span>
+
+
+            <input type="radio" id="waffle" name="cone" value="waffle"></input>
+            <label for = "waffle">Waffle Cone</label>
+            <input type="radio" id="sugar" name="cone" value="sugar"></input>
+            <label for = "sugar">Waffle Cone</label>
+            <input type="radio" id="cup" name="cone" value="cup"></input>
+            <label for = "waffle">Cup</label>
 
             <p>Toppings: </p>
             <input type="checkbox" id="sprinkles" name="topping[]" value="sprinkles">Sprinkles</input>
